@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
-import org.firstinspires.ftc.teamcode.mechanisms.TestBenchOpMode1;
+import org.firstinspires.ftc.teamcode.mechanisms.TestBenchMechanisms;
 
 /**
  * TestOpMode
@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.mechanisms.TestBenchOpMode1;
 public class TestOpMode extends LinearOpMode {
 
     // Instantiate our hardware class
-    TestBenchOpMode1 robot = new TestBenchOpMode1();
+    TestBenchMechanisms robot = new TestBenchMechanisms();
 
     // Variables to keep track of our robot's state
     double motorPower = 0.0;
@@ -108,7 +108,8 @@ public class TestOpMode extends LinearOpMode {
             telemetry.addData("Motor Power", "%.2f", motorPower);
             telemetry.addData("Motor Encoders", robot.getMotorPosition());
             telemetry.addData("Servo Position", "%.3f", servoPosition);
-            telemetry.addData("Touch Sensor", currentTouchState);
+            telemetry.addData("Touch Pressed", currentTouchState);
+            telemetry.addData("Touch Raw Value", "%.2f", robot.getTouchValue());
             telemetry.update();
             
             // Small pause to keep the loop timing consistent
