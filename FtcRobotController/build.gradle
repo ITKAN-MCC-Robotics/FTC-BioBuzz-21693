@@ -28,7 +28,7 @@ android {
         targetSdk 28
     }
     testOptions {
-        targetSdk 28
+        targetSdk 34
     }
 }
 
